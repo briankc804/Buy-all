@@ -196,6 +196,9 @@ STATIC_ROOT = join(BASE_DIR, 'staticfiles')
 STATIC_FILES_DIRS = [join(BASE_DIR, 'build/static')],
 
 MEDIA_ROOT = join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+# MEDIA_ROOT = BASE_DIR /'media'
+
 
 LANGUAGE_CODE = 'en-us'
 

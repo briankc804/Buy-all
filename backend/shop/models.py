@@ -12,7 +12,7 @@ User = get_user_model()
 
 class Category(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    photo = CloudinaryField()
+    photo = models.ImageField(upload_to="categories/cat_picture", blank= True, null=True)
     name = models.CharField(max_length=50)
     slug = models.SlugField(max_length=200, unique=True)
 
@@ -30,7 +30,7 @@ class Product(models.Model):
     vendor = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='vendor')
     name = models.CharField(max_length=200)
-    photo = CloudinaryField()
+    photo = models.ImageField(upload_to="Product/prod-picture", blank=True, null=True)
     price = models.DecimalField(max_digits=12, decimal_places=2)
     slug = models.SlugField(max_length=200, unique=True)
     stock = models.IntegerField(default=0)
